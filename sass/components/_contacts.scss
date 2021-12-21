@@ -1,0 +1,100 @@
+.contacts {
+  display: none;
+
+  @include mq(tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mq(desktop) {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__container {
+    margin-left: auto;
+  }
+
+  &__item:not(:first-child) {
+    @include mq(tablet) {
+      margin-top: 10px;
+    }
+
+    @include mq(desktop) {
+      margin-left: 50px;
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    @include mq(tablet) {
+      color: var(--primary-text-color);
+      fill: currentColor;
+      text-decoration: none;
+
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.16;
+      letter-spacing: 0.02em;
+
+      transition: color 250ms cubic-bezier(var(--cubic-bz));
+    }
+
+    @include mq(desktop) {
+      font-size: 14px;
+      line-height: 1.14;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+      outline: transparent;
+    }
+
+    &--email {
+      @include mq(tablet) {
+        display: flex;
+        align-items: center;
+      }
+
+      @include mq(desktop) {
+        display: flex;
+        align-items: baseline;
+      }
+    }
+
+    &--tel {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__icon--mail {
+    @include mq(tablet) {
+      margin-right: 8px;
+      height: 10px;
+      width: 14px;
+    }
+
+    @include mq(desktop) {
+      margin-right: 10px;
+      height: 12px;
+      width: 16px;
+    }
+  }
+
+  &__icon--tel {
+    @include mq(tablet) {
+      margin-right: 8px;
+      height: 14px;
+      width: 10px;
+    }
+
+    @include mq(desktop) {
+      margin-right: 10px;
+      height: 16px;
+      width: 10px;
+    }
+  }
+}

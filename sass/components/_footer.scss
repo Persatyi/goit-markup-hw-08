@@ -1,0 +1,25 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-color: #2f303a;
+
+  &__wrapper {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__address {
+    margin-right: 70px;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  &__socials {
+    fill: var(--primary-white-color);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

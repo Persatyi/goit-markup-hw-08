@@ -1,0 +1,14 @@
+.employees__section {
+  background-color: rgba(245, 244, 250, 1);
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+  
+  @include mq(tablet) {
+  }
+
+  @include mq(desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}

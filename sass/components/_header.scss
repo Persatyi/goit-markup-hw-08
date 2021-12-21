@@ -1,0 +1,24 @@
+.header {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+
+  @include mq(tablet) {
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+
+  @include mq(desktop) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  &__line {
+    border-bottom: 1px solid rgba(236, 236, 236, 1);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,25 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transform: translateX(-50%);
+  transition: opacity 250ms cubic-bezier(var(--cubic-bz)),
+    visibility 250ms cubic-bezier(var(--cubic-bz));
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
