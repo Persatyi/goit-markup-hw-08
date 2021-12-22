@@ -134,6 +134,43 @@ textarea {
   align-items: center;
 }
 
+.menu__btn--open {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.icon__cross {
+  display: none;
+}
+
+.menu__btn--open.is-open .icon__cross {
+  display: block;
+}
+
+.menu__btn--open.is-open .icon__menu {
+  display: none;
+}
+
+.menu__container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vh;
+  height: 100vh;
+  background-color: #ffffff;
+  padding: 48px 40px;
+}
+
+.menu__container.is-open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -206,41 +243,6 @@ textarea {
   .nav__link--current::after {
     bottom: -31px;
   }
-}
-
-.menu__btn--open {
-  display: inline-flex;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-}
-
-.icon__cross {
-  display: none;
-}
-
-.menu__btn--open.is-open .icon__cross {
-  display: block;
-}
-
-.menu__btn--open.is-open .icon__menu {
-  display: none;
-}
-
-.menu__container {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  padding: 48px 40px;
-}
-
-.menu__container.is-open {
-  display: block;
 }
 
 .contacts {
@@ -527,6 +529,7 @@ textarea {
   z-index: 2;
   width: 100vw;
   height: 100vh;
+  overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transform: translateX(-50%);
@@ -1319,11 +1322,18 @@ textarea {
 
 .portfolio__item {
   margin: 15px;
+  width: 100%;
 }
 
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (min-width: 768px) {
   .portfolio__item {
-    max-width: 354px;
+    width: calc(100% / 2 - 30px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio__item {
+    width: calc(100% / 3 - 30px);
   }
 }
 
@@ -1372,6 +1382,9 @@ textarea {
 
 .portfolio__link {
   text-decoration: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio__title {
@@ -1395,11 +1408,6 @@ textarea {
 .portfolio__wrap {
   border: 1px solid #eeeeee;
   padding: 20px 24px;
-}
-
-@media (min-width: 768px) and (max-width: 1199.98px) {
-  .portfolio__wrap--first {
-    padding-bottom: 56px;
-  }
+  flex-grow: 1;
 }
 /*# sourceMappingURL=main.css.map */

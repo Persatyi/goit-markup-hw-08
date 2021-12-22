@@ -70,43 +70,4 @@
   }
 }
 
-.menu__btn--open {
-  // position: absolute;
-  // top: 22px;
-  // right: 23px;
-
-  display: inline-flex;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-}
-
-.icon__cross {
-  display: none;
-}
-
-.menu__btn--open.is-open .icon__cross {
-  display: block;
-}
-
-.menu__btn--open.is-open .icon__menu {
-  display: none;
-}
-
-.menu__container {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background-color: #ffffff;
-  padding: 48px 40px;
-
-  &.is-open {
-    display: block;
-  }
-}
 

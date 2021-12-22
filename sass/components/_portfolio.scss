@@ -20,9 +20,16 @@
 
   &__item {
     margin: 15px;
+   
+    width: 100%;
     
-    @include mq(tablet-only) {
-     max-width: 354px;
+    @include mq(tablet) {
+    
+    width: calc(100% / 2 - 30px);
+    }
+    @include mq(desktop) {
+      width: calc(100% / 3 - 30px);
+      
     }
   }
 
@@ -74,6 +81,9 @@
 
   &__link {
     text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -99,14 +109,6 @@
   &__wrap {
     border: 1px solid rgba(238, 238, 238, 1);
     padding: 20px 24px;
-  }
-
-
-  // Костыль!
-  &__wrap--first {
-    @include mq(tablet-only) {
-      padding-bottom: 56px;
-     }
-    
+    flex-grow: 1;
   }
 }
