@@ -174,7 +174,9 @@
   }
 
   &__link {
+    text-decoration: underline;
     color: var(--accent-color);
+    margin-left: 1px;
     @include mq(desktop) {
       margin-left: 5px;
     }

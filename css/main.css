@@ -826,7 +826,9 @@ a {
 }
 
 .modal__link {
+  text-decoration: underline;
   color: var(--accent-color);
+  margin-left: 1px;
 }
 
 @media (min-width: 1200px) {
