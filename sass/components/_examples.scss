@@ -1,19 +1,12 @@
 .examples {
   display: none;
 
-  @include mq(tablet) {
-  }
-
   @include mq(desktop) {
     display: flex;
     justify-content: space-between;
   }
 
   &__section {
-
-    @include mq(tablet) {
-    
-    }
   
     @include mq(desktop) {
       padding-top: 94px;

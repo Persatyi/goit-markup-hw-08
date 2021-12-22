@@ -1,36 +1,27 @@
 .logo {
-    font-family: Raleway, sans-serif;
-    color: var(--accent-color);
-    
-    text-decoration: none;
-  
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 1.07;
+  font-family: Raleway, sans-serif;
+  color: var(--accent-color);
 
-    @include mq(tablet) {
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.07;
+
+  @include mq(tablet) {
     line-height: 1.16;
-    }
-  
-    @include mq(desktop) {
-      font-size: 26px;
-      line-height: 1.19;
-    }
-  
-
-    &__title--white {
-      color: var(--primary-white-color)
-    }
-
-    &__title--black {
-      color: var(--title-text-color);
-    }
-
-    &__footer {
-      display: inline-block;
-      margin-bottom: 20px;
-    }
   }
-  
-  
-  
+
+  @include mq(desktop) {
+    font-size: 26px;
+    line-height: 1.19;
+  }
+
+  &__title--white {
+    color: var(--primary-white-color);
+  }
+
+  &__title--black {
+    color: var(--title-text-color);
+  }
+}

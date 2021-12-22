@@ -1,6 +1,20 @@
 .address {
-  display: flex;
-  flex-direction: column;
+  @include mq(mobile-only) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include mq(tablet-only) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include mq(desktop) {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__item:not(:last-child) {
     margin-top: 0;

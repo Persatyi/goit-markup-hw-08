@@ -1,9 +1,0 @@
-.section {
-  @include mq(tablet) {
-  }
-
-  @include mq(desktop) {
-    padding-top: 94px;
-    padding-bottom: 94px;
-  }
-}

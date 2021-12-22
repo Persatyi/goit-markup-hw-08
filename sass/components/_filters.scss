@@ -1,7 +1,19 @@
 .filters {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  @include mq(mobile-only) {
+    
+  }
+
+  @include mq(tablet) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 50px;
+  }
 
   &__item:not(:last-child) {
     margin-right: 8px;
@@ -24,6 +36,10 @@
 
     transition: background-color 250ms cubic-bezier(var(--cubic-bz)),
       color 250ms cubic-bezier(var(--cubic-bz)), box-shadow 250ms cubic-bezier(var(--cubic-bz));
+
+      @include mq(mobile-only) {
+        margin-bottom: 15px;
+      }
 
     &:hover,
     &:focus {

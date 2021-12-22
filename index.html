@@ -36,6 +36,24 @@
                         <a class="nav__link" href="">Контакты</a>
                     </li>
                 </ul>
+                <button class="menu__btn--open is-open" type="button" data-menu-button aria-expanded="false" aria-controls="menu-container">
+                    <svg width="40" height="40" aria-label="mobile menu swicher">
+                        <use class="icon__menu" href="./images/sprite/icons.svg#icon-menu-btn"></use>
+                        <use class="icon__cross" href="./images/sprite/icons.svg#icon-close-btn"></use>
+                    </svg>
+                </button>
+                <div class="menu__container is-open" id="menu-container" data-menu>
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link nav__link--current" href="./index.html">Студия</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="./portfolio.html">Портфолио</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="">Контакты</a>
+                        </li>
+                </div>
             </nav>
             <!-- Contacts -->
             <div class="contacts__container">
@@ -60,14 +78,6 @@
             </div>
         </div>
     </header>
-    <button class="menu__btn--open" type="button">
-        <svg width="24" height="16">
-            <use href="./images/sprite/icons.svg#icon-menu-mob"></use>
-        </svg>
-        <svg width="19" height="19">
-            <use href="./images/sprite/icons.svg#icon-close-mob"></use>
-        </svg>
-    </button>
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -159,9 +169,19 @@
                 <h2 class="title">Наша команда</h2>
                 <ul class="team">
                     <li class="team__item">
-                        <img class="team__photo--mob" src="./images/mobile/team/mob-employee.jpg" alt="employee" width="450">
-                        <img class="team__photo--tablet" src="./images/tablet/team/worker.jpg" alt="employee" width="354">
-                        <img class="team__photo" src="./images/employee1.jpg" alt="employee" width="270">
+                        <picture>
+                            <source
+                                srcset="./images/desktop/team/employee1.jpg 1x, ./images/desktop/team/employee1-x2.jpg 2x"
+                                media="(min-width:1200px)" type="image/jpg" />
+                            <source
+                                srcset="./images/tablet/team/employee1.jpg 1x, ./images/tablet/team/employee1-x2.jpg 2x"
+                                media="(min-width:768px)" type="image/jpg" />
+                            <source
+                                srcset="./images/mobile/team/mob-employee.jpg 1x, ./images/mobile/team/mob-employee-x2.jpg 2x"
+                                media="(max-width:767px)" type="image/jpg" />
+                            <img class="team__photo" src="./images/mobile/team/mob-employee.jpg" alt="employee"
+                                width="450" loading="lazy">
+                        </picture>
                         <h3 class="team__name">Игорь Демьяненко</h3>
                         <p class="team__position">Product Designer</p>
                         <ul class="socials">
@@ -196,9 +216,19 @@
                         </ul>
                     </li>
                     <li class="team__item">
-                        <img class="team__photo--mob" src="./images/mobile/team/mob-employee2.jpg" alt="employee" width="450">
-                        <img class="team__photo--tablet" src="./images/tablet/team/worker2.jpg" alt="employee" width="354">
-                        <img class="team__photo" src="./images/emloyee2.jpg" alt="employee" width="270">
+                        <picture>
+                            <source
+                                srcset="./images/desktop/team/employee2.jpg 1x, ./images/desktop/team/employee2-x2.jpg 2x"
+                                media="(min-width:1200px)" type="image/jpg" />
+                            <source
+                                srcset="./images/tablet/team/employee2.jpg 1x, ./images/tablet/team/employee2-x2.jpg 2x"
+                                media="(min-width:768px)" type="image/jpg" />
+                            <source
+                                srcset="./images/mobile/team/mob-employee2.jpg 1x, ./images/mobile/team/mob-employee2-x2.jpg 2x"
+                                media="(max-width:767px)" type="image/jpg" />
+                            <img class="team__photo" src="./images/mobile/team/mob-employee2.jpg" alt="employee"
+                                width="450" loading="lazy">
+                        </picture>
                         <h3 class="team__name">Ольга Репина</h3>
                         <p class="team__position">Frontend Developer</p>
                         <ul class="socials">
@@ -233,9 +263,19 @@
                         </ul>
                     </li>
                     <li class="team__item">
-                        <img class="team__photo--mob" src="./images/mobile/team/mob-employee3.jpg" alt="employee" width="450">
-                        <img class="team__photo--tablet" src="./images/tablet/team/worker3.jpg" alt="employee" width="354">
-                        <img class="team__photo" src="./images/employee3.jpg" alt="employee" width="270">
+                        <picture>
+                            <source
+                                srcset="./images/desktop/team/employee3.jpg 1x, ./images/desktop/team/employee3-x2.jpg 2x"
+                                media="(min-width:1200px)" type="image/jpg" />
+                            <source
+                                srcset="./images/tablet/team/employee3.jpg 1x, ./images/tablet/team/employee3-x2.jpg 2x"
+                                media="(min-width:768px)" type="image/jpg" />
+                            <source
+                                srcset="./images/mobile/team/mob-employee3.jpg 1x, ./images/mobile/team/mob-employee3-x2.jpg 2x"
+                                media="(max-width:767px)" type="image/jpg" />
+                            <img class="team__photo" src="./images/mobile/team/mob-employee3.jpg" alt="employee"
+                                width="450" loading="lazy">
+                        </picture>
                         <h3 class="team__name">Николай Тарасов</h3>
                         <p class="team__position">Marketing</p>
                         <ul class="socials">
@@ -270,9 +310,19 @@
                         </ul>
                     </li>
                     <li class="team__item">
-                        <img class="team__photo--mob" src="./images/mobile/team/mob-employee4.jpg" alt="employee" width="450">
-                        <img class="team__photo--tablet" src="./images/tablet/team/worker4.jpg" alt="employee" width="354">
-                        <img class="team__photo" src="./images/employee4.jpg" alt="employee" width="270">
+                        <picture>
+                            <source
+                                srcset="./images/desktop/team/employee4.jpg 1x, ./images/desktop/team/employee4-x2.jpg 2x"
+                                media="(min-width:1200px)" type="image/jpg" />
+                            <source
+                                srcset="./images/tablet/team/employee4.jpg 1x, ./images/tablet/team/employee4-x2.jpg 2x"
+                                media="(min-width:768px)" type="image/jpg" />
+                            <source
+                                srcset="./images/mobile/team/mob-employee4.jpg 1x, ./images/mobile/team/mob-employee4-x2.jpg 2x"
+                                media="(max-width:767px)" type="image/jpg" />
+                            <img class="team__photo" src="./images/mobile/team/mob-employee4.jpg" alt="employee"
+                                width="450" loading="lazy">
+                        </picture>
                         <h3 class="team__name">Михаил Ермаков</h3>
                         <p class="team__position">UI Designer</p>
                         <ul class="socials">
@@ -361,7 +411,7 @@
         </section>
     </main>
     <!-- Footer -->
-    <!-- <footer class="footer">
+    <footer class="footer">
         <div class="container footer__wrapper">
             <div class="footer__address">
                 <a class="logo footer__logo" href="./index.html">
@@ -413,24 +463,24 @@
                         </a>
                     </li>
                 </ul>
-            </div> -->
+            </div>
             <!-- Subscibe form -->
-                <!-- <form class="subscribe" action="#">
-                    <label class="subscribe__label" for="subscribe">
-                        <span class="socials__title">Подпишитесь на рассылку</span>
-                        <input class="subscribe__input" type="email" name="email" id="subscribe" placeholder="E-mail">
-                    </label>
-                    <button type="submit" class="button subscribe__btn" data-modal-open>
-                        Подписаться
-                        <svg class="subscribe__icon" width="24" height="24">
-                            <use href="./images/sprite/icons.svg#icon-send"></use>
-                        </svg>
-                    </button>
-                </form>
+            <form class="subscribe" action="#">
+                <label class="subscribe__label" for="subscribe">
+                    <span class="socials__title">Подпишитесь на рассылку</span>
+                    <input class="subscribe__input" type="email" name="email" id="subscribe" placeholder="E-mail">
+                </label>
+                <button type="submit" class="button subscribe__btn" data-modal-open>
+                    Подписаться
+                    <svg class="subscribe__icon" width="24" height="24">
+                        <use href="./images/sprite/icons.svg#icon-send"></use>
+                    </svg>
+                </button>
+            </form>
         </div>
-    </footer> -->
+    </footer>
     <!-- Modal window -->
-    <!-- <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop is-hidden" data-modal>
         <div class="modal">
             <button class="modal__btn--close" type="button" data-modal-close>
                 <svg width="18" height="18">
@@ -470,23 +520,26 @@
                 </ul>
                 <div class="modal__field">
                     <label class="modal__label" for="comment">Комментарий</label>
-                    <textarea class="modal__textarea" name="comment" id="comment" placeholder="Введите текст"></textarea>
+                    <textarea class="modal__textarea" name="comment" id="comment"
+                        placeholder="Введите текст"></textarea>
                 </div>
                 <label class="modal__checkbox" for="submit">
-                    <input class="input__checkbox visually-hidden" type="checkbox" name="agreement" value="submit" id="submit" checked>
+                    <input class="input__checkbox visually-hidden" type="checkbox" name="agreement" value="submit"
+                        id="submit" checked>
                     <span class="modal__agreement-checkbox">
                         <svg class="checkbox__label" width="11" height="8">
                             <use href="./images/sprite/icons.svg#icon-checkbox"></use>
                         </svg>
                     </span>
-                    Соглашаюсь с рассылкой и принимаю 
+                    Соглашаюсь с рассылкой и принимаю
                     <a class="modal__link" href=""> Условия договора</a>
                 </label>
                 <button class="button modal__btn" type="submit">Отправить</button>
             </form>
         </div>
-    </div> -->
+    </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>

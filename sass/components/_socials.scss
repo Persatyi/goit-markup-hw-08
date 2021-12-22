@@ -37,5 +37,14 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #ffffff;
+
+    @include mq(mobile-only) {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include mq(tablet-only) {
+      text-align: center;
+    }
   }
 }
