@@ -27,6 +27,7 @@
     
     width: calc(100% / 2 - 30px);
     }
+    
     @include mq(desktop) {
       width: calc(100% / 3 - 30px);
       
@@ -41,16 +42,7 @@
 
   &__overlay-thumb {
     position: relative;
-
     overflow: hidden;
-    @include mq(mobile-only) {
-      max-width: 370px;
-    }
-
-    @include mq(desktop) {
-      justify-content: unset;
-      width: 370px;
-    }
   }
 
   &__overlay {

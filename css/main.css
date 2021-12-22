@@ -30,7 +30,6 @@
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  outline: 1px solid tomato;
 }
 
 @media (min-width: 480px) {
@@ -59,6 +58,10 @@ body {
   letter-spacing: 0.03em;
 }
 
+.page.no-scroll {
+  overflow: hidden;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -73,6 +76,10 @@ img {
 
 textarea {
   resize: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .logo {
@@ -129,17 +136,31 @@ textarea {
   border-bottom: 1px solid #ececec;
 }
 
-.header__container {
-  display: flex;
-  align-items: center;
+@media (min-width: 768px) {
+  .header__container {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .menu__btn--open {
-  display: inline-flex;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: transparent;
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .menu__btn--open {
+    display: inline-flex;
+    margin: 0;
+    margin-left: auto;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    z-index: 6;
+    fill: currentColor;
+  }
+  .menu__btn--open:hover, .menu__btn--open:focus {
+    fill: var(--accent-color);
+  }
 }
 
 .icon__cross {
@@ -155,20 +176,104 @@ textarea {
 }
 
 .menu__container {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100vh;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
+  z-index: 5;
+  background-color: var(--primary-white-color);
   padding: 48px 40px;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(var(--cubic-bz)), opacity 250ms cubic-bezier(var(--cubic-bz)), visibility 250ms cubic-bezier(var(--cubic-bz));
 }
 
 .menu__container.is-open {
+  visibility: visible;
+  pointer-events: visible;
+  opacity: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  transform: translateX(-50%);
+  transition: transform 250ms cubic-bezier(var(--cubic-bz)), opacity 250ms cubic-bezier(var(--cubic-bz)), visibility 250ms cubic-bezier(var(--cubic-bz));
+}
+
+.menu {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+}
+
+.menu__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.menu__link {
+  color: var(--title-text-color);
+}
+
+.menu__link--current {
+  color: var(--accent-color);
+}
+
+.menu-contacts {
+  margin-bottom: 64px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+}
+
+.menu-contacts__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.menu-contacts__link.tel {
+  font-size: 34px;
+  line-height: 1.18;
+  color: var(--accent-color);
+}
+
+.menu-contacts__link.email {
+  color: var(--primary-text-color);
+}
+
+.menu-socials {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.menu-socials__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.menu-socials__item {
+  position: relative;
+}
+
+.menu-socials__item:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(33, 33, 33, 0.2);
+  position: absolute;
+  top: 0;
+  right: -10px;
+}
+
+.menu-socials__link {
+  color: var(--accent-color);
 }
 
 .nav {
@@ -361,13 +466,13 @@ textarea {
   margin: 0 auto;
   padding-top: 118px;
   padding-bottom: 118px;
-  min-height: 400px;
   max-width: 480px;
   text-align: center;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../../images/mobile/mobile-bg.jpg");
   background-color: #2f303a;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 @media screen and (min-device-pixel-ratio: 2), screen and (-moz-min-device-pixel-ratio: 2), screen and (-o-min-device-pixel-ratio: 2 / 1), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
@@ -526,7 +631,7 @@ textarea {
   position: fixed;
   top: 0;
   left: 50%;
-  z-index: 2;
+  z-index: 10;
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
@@ -1344,19 +1449,6 @@ textarea {
 .portfolio__overlay-thumb {
   position: relative;
   overflow: hidden;
-}
-
-@media (max-width: 767.98px) {
-  .portfolio__overlay-thumb {
-    max-width: 370px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .portfolio__overlay-thumb {
-    justify-content: unset;
-    width: 370px;
-  }
 }
 
 .portfolio__overlay {

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 
-<body>
+<body class="page">
     <!-- Navigation -->
     <header class="header header__line">
         <div class="container header__container">
@@ -36,6 +36,62 @@
                         <a class="nav__link" href="">Контакты</a>
                     </li>
                 </ul>
+                <button class="menu__btn--open" type="button" data-menu-button aria-expanded="false" aria-controls="menu__container">
+                    <svg width="40" height="40" aria-label="mobile menu swicher">
+                        <use class="icon__menu" href="./images/sprite/icons.svg#icon-menu-btn"></use>
+                        <use class="icon__cross" href="./images/sprite/icons.svg#icon-close-btn"></use>
+                    </svg>
+                </button>
+
+                <div class="menu__container" id="menu-container" data-menu>
+                    <ul class="menu list">
+                        <li class="menu__item">
+                            <a class="menu__link" href="./index.html">Студия</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link menu__link--current" href="./portfolio.html">Портфолио</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="">Контакты</a>
+                        </li>
+                    </ul>
+                    <div class="modal-menu__wrapper">
+                        <ul class="menu-contacts list">
+                            <li class="menu-contacts__item">
+                                <a class="menu-contacts__link tel" href="tel:380961111111">
+                                    +38 096 111 11 11
+                                </a>
+                            </li>
+                            <li class="menu-contacts__item">
+                                <a class="menu-contacts__link email" href="mailto:info@devstudio.com">
+                                    info@devstudio.com
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="menu-socials">
+                            <li class="menu-socials__item">
+                                <a href="" class="menu-socials__link">
+                                    Instagram
+                                </a>
+                            </li>
+                            <li class="menu-socials__item">
+                                <a href="" class="menu-socials__link">
+                                Twitter
+                            </a>
+                        </li>
+                            <li class="menu-socials__item">
+                                <a href="" class="menu-socials__link">
+                                Facebook
+                            </a>
+                        </li>
+                            <li class="menu-socials__item">
+                                <a href="" class="menu-socials__link">
+                                LinkedIn
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
             <!-- Contacts -->
             <div class="contacts__container">
@@ -404,6 +460,7 @@
             </form>
         </div>
     </footer>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>

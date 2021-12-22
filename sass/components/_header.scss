@@ -3,7 +3,6 @@
   padding-top: 16px;
   padding-bottom: 16px;
 
-
   @include mq(tablet) {
     padding-top: 21px;
     padding-bottom: 21px;
@@ -19,7 +18,9 @@
   }
 
   &__container {
-    display: flex;
-    align-items: center;
+    @include mq(tablet) {
+      display: flex;
+      align-items: center;
+    }
   }
 }

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 
-<body>
+<body class="page">
     <!-- Navigation -->
     <header class="header">
         <div class="container header__container">
@@ -36,17 +36,17 @@
                         <a class="nav__link" href="">Контакты</a>
                     </li>
                 </ul>
-                <button class="menu__btn--open is-open" type="button" data-menu-button aria-expanded="false" aria-controls="menu-container">
+                
+                <button class="menu__btn--open" type="button" data-menu-button aria-expanded="false" aria-controls="menu__container">
                     <svg width="40" height="40" aria-label="mobile menu swicher">
                         <use class="icon__menu" href="./images/sprite/icons.svg#icon-menu-btn"></use>
                         <use class="icon__cross" href="./images/sprite/icons.svg#icon-close-btn"></use>
                     </svg>
                 </button>
-                <div class="menu__container is-open" id="menu-container" data-menu>
-                    <div class="container">
-                    <ul class="menu">
+                <div class="menu__container" id="menu-container" data-menu>
+                    <ul class="menu list">
                         <li class="menu__item">
-                            <a class="menu__link" href="./index.html">Студия</a>
+                            <a class="menu__link menu__link--current" href="./index.html">Студия</a>
                         </li>
                         <li class="menu__item">
                             <a class="menu__link" href="./portfolio.html">Портфолио</a>
@@ -55,25 +55,42 @@
                             <a class="menu__link" href="">Контакты</a>
                         </li>
                     </ul>
-                    <ul class="menu__contacts">
-                        <li class="contacts__item">
-                            <a class="contacts__link contacts__link--email" href="mailto:info@devstudio.com">
-                                info@devstudio.com
+                    <div class="modal-menu__wrapper">
+                        <ul class="menu-contacts list">
+                            <li class="menu-contacts__item">
+                                <a class="menu-contacts__link tel" href="tel:380961111111">
+                                    +38 096 111 11 11
+                                </a>
+                            </li>
+                            <li class="menu-contacts__item">
+                                <a class="menu-contacts__link email" href="mailto:info@devstudio.com">
+                                    info@devstudio.com
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="menu-socials">
+                            <li class="menu-socials__item">
+                                <a href="" class="menu-socials__link">
+                                    Instagram
+                                </a>
+                            </li>
+                            <li class="menu-socials__item">
+                                <a href="" class="menu-socials__link">
+                                Twitter
                             </a>
                         </li>
-                        <li class="contacts__item">
-                            <a class="contacts__link contacts__link--tel" href="tel:380961111111">
-                                +38 096 111 11 11
+                            <li class="menu-socials__item">
+                                <a href="" class="menu-socials__link">
+                                Facebook
                             </a>
                         </li>
-                    </ul>
-                    <ul class="menu-socials">
-                        <li class="menu-socials__item">Instagram</li>
-                        <li class="menu-socials__item">Twitter</li>
-                        <li class="menu-socials__item">Facebook</li>
-                        <li class="menu-socials__item">LinkedIn</li>
-                    </ul>
-                </div>
+                            <li class="menu-socials__item">
+                                <a href="" class="menu-socials__link">
+                                LinkedIn
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
             <!-- Contacts -->
@@ -164,19 +181,37 @@
                 <h2 class="title title__no-display">Чем мы занимаемся</h2>
                 <ul class="examples">
                     <li class="examples__item">
-                        <img src="./images/placeholder.jpg" alt="laptop" width="370">
+                        <picture>
+                            <source
+                                srcset="./images/desktop/examples/placeholder.jpg, ./images/desktop/examples/placeholder-x2.jpg 2x"
+                                media="(min-width:1200px)" type="image/jpg" />
+                            <img src="./images/desktop/examples/placeholder.jpg" alt="laptop"
+                                width="370" loading="lazy">
+                        </picture>
                         <p class="examples__text">
                             Десктопные приложения
                         </p>
                     </li>
                     <li class="examples__item">
-                        <img src="./images/placeholder2.jpg" alt="phone" width="370">
+                        <picture>
+                            <source
+                                srcset="./images/desktop/examples/placeholder1.jpg, ./images/desktop/examples/placeholder1-x2.jpg 2x"
+                                media="(min-width:1200px)" type="image/jpg" />
+                            <img src="./images/desktop/examples/placeholder1.jpg" alt="phone"
+                                width="370" loading="lazy">
+                        </picture>
                         <p class="examples__text">
                             Мобильные приложения
                         </p>
                     </li>
                     <li class="examples__item">
-                        <img src="./images/placeholder3.jpg" alt="palette" width="370">
+                        <picture>
+                            <source
+                                srcset="./images/desktop/examples/placeholder2.jpg, ./images/desktop/examples/placeholder2-x2.jpg 2x"
+                                media="(min-width:1200px)" type="image/jpg" />
+                            <img src="./images/desktop/examples/placeholder2.jpg" alt="palette"
+                                width="370" loading="lazy">
+                        </picture>
                         <p class="examples__text">
                             Дизайнерские решения
                         </p>
